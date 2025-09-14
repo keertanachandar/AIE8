@@ -37,15 +37,15 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner. 
-    - Aspect Tested:
+    - Aspect Tested: Are concepts easy to understand and read? Is the response formatted properly? 
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested:
+    - Aspect Tested: Does the response cover the main details of the information? Is the response 150 words or less (what does the system consider short/concise)?
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested:
+    - Aspect Tested: Does the number of words in the response actually fall in the range given? Is the theme of the story followed? 
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested:
+    - Aspect Tested: Is the answer correct? Is the work shown and is that accurate as well?
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested:
+    - Aspect Tested: Are any typos fixed? Has the message changed at all - only the tone should change but the actual information should not have changed.
 
 This "vibe check" now serves as a baseline, of sorts, to help understand what holes your application has.
 
@@ -58,7 +58,7 @@ This "vibe check" now serves as a baseline, of sorts, to help understand what ho
 #### ❓Question #1:
 
 What are some limitations of vibe checking as an evaluation tool?
-##### ✅ Answer:
+##### ✅ Answer: Vibe checking is pretty subjective - different evaluators might have different definitions of what success looks like if it is not explicitly stated already. To add to that, the tool itself might run on different criteria. Vibe checking is also a very quick test and doesn't do any in depth checks if the system actually works as expected. "Vibes" can also change at any time.
 
 ### 🚧 Advanced Build (OPTIONAL):
 
