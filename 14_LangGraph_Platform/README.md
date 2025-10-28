@@ -39,7 +39,8 @@ Run the repository and complete the following:
 Compare the `agent` and `agent_helpful` assistants defined in `langgraph.json`. Where does the helpfulness evaluator fit in the graph, and under what condition should execution route back to the agent vs. terminate?
 
 ##### ✅ Answer:
-_(enter answer here)_
+The `agent` assistant has 2 nodes - `agent` and `action`. It starts at the agent. If there is a tool call, then an action is called, and then sent back to the agent. Otherwise, it ends the run.
+The `agent_helpful` assistant has 3 nodes - `agent`, `action`, and also `helpfulness`. It follows similar logic as the simple agent, where is there is a tool call then the action is called and sent back to the agent. If there is no tool call however, instead of terminating we call the helpfulness evaluator. If the result is deemed helpful (by the `helpfulness_decision` call) then we terminate. If not then we return back to the agent, but only with a limit of 10 cycles to prevent any infinite loops.
 
 #### 🏗️ Activity #1 Debugging A Graph
 
@@ -50,8 +51,8 @@ Select the `agent_with_helpfulness` and set one or more interrupts (at least one
 What are your thoughts on when you would use a Before interrupt vs. an After interrupt?
 
 ##### ✅ Answer:
-_(enter answer here)_
-
+I would use a `before` interrupt to see what state/inputs are being passed into each node. For example, it was very useful to see the different responses being passed into the helpfulness agent before it was run. If the agent is run multiple times in one cycle, then it will be useful to see how the state is being changed each time the agent is called.
+I would use an `after` interrupt to help with debugging the outputs or messages. It isn't very useful after any terminal nodes, like helpfulness, because the execution terminates before anything can be 'interrupted'. A better use case is to view the state between non-terminal nodes, like after an agent call, to see the response before routing to the next node. And also to be able to see which route it is going to take based on the response.
 
 
 <details>
