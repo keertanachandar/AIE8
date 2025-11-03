@@ -18,6 +18,36 @@ By the end of this session, you'll understand:
 
 - **🔄 A2A Protocol**: How agents communicate and evaluate response quality
 
+## 🎉 Project Status
+
+### ✅ Activity #1 Complete: A2A Client Agent Built!
+
+A complete **LangGraph-based client agent** has been implemented that demonstrates agent-to-agent communication through the A2A protocol.
+
+**📦 What's Included:**
+- 🔧 **A2A Tool Layer** - LangChain tools that wrap A2A API calls
+- 🤖 **Client Agent Graph** - Intelligent agent that delegates to the server
+- 💻 **Interactive CLI** - User-friendly interface for testing
+- ✅ **Automated Tests** - Complete test suite (all passing)
+- 📚 **Comprehensive Docs** - Architecture, guides, and examples
+
+**🚀 Quick Links:**
+- 📘 [Quick Start Guide](./QUICKSTART_CLIENT.md) - Get started in 5 minutes
+- 📖 [Technical Documentation](./CLIENT_AGENT.md) - Complete implementation guide
+- 🏗️ [Architecture Overview](./ARCHITECTURE.md) - System design and flow
+- ✅ [Solution Summary](./ACTIVITY_1_SOLUTION.md) - What was built
+
+**🎯 Try It Now:**
+```bash
+# Terminal 1: Start the A2A server
+uv run python -m app
+
+# Terminal 2: Run the client agent
+uv run python app/run_client_agent.py -i
+```
+
+---
+
 ## 🧠 A2A Protocol with Helpfulness Loop
 
 The core learning focus is this intelligent evaluation cycle:
@@ -82,19 +112,66 @@ Build a LangGraph Graph to "use" your application.
 
 Do this by creating a Simple Agent that can make API calls to the 🤖Agent Node above through the A2A protocol. 
 
+#### ✅ **COMPLETED - A2A Client Agent Built!**
+
+A complete LangGraph client agent has been implemented that communicates with the A2A server.
+
+**🚀 Quick Start - Client Agent:**
+
+```bash
+# Start the A2A server first (in one terminal)
+uv run python -m app
+
+# Run the interactive client agent (in another terminal)
+uv run python app/run_client_agent.py -i
+
+# Or run a single query
+uv run python app/run_client_agent.py -q "What are the latest AI developments?"
+```
+
+**📁 Files Created:**
+- `app/a2a_tool.py` - LangChain tool for A2A API calls
+- `app/client_agent.py` - LangGraph client agent implementation  
+- `app/run_client_agent.py` - Interactive CLI runner
+- `app/visualize_client.py` - Graph visualization
+- `CLIENT_AGENT.md` - Complete documentation
+
+**📚 Full Documentation:**
+See [CLIENT_AGENT.md](./CLIENT_AGENT.md) for detailed architecture, usage examples, and customization guide.
+
+**🎯 What It Does:**
+The client agent intelligently delegates tasks to your A2A server agent when it needs:
+- Real-time web search (via Tavily)
+- Academic paper search (via ArXiv)  
+- Document retrieval (via RAG)
+
+For simple queries, it responds directly without calling the A2A server.
+
 ### ❓ Question #1:
 
 What are the core components of an `AgentCard`?
 
 ##### ✅ Answer:
 
-<br />
+An `AgentCard` contains:
+1. Identity - `name`, `description`, `version`, `url`
+2. Protocol - `protocolVersion`, `preferredTransport` (e.g., "JSONRPC")
+3. Capabilities - `streaming`, `pushNotifications` (boolean flags)
+4. Skills - Array of skills with `id`, `name`, `description`, `tags`, and `examples`
+5. I/O Modes - `defaultInputModes`, `defaultOutputModes` (supported content types)
+
+It's essentially a discovery document that advertises what an agent can do and how to communicate with it, similar to an OpenAPI spec for agents.
 
 ### ❓ Question #2:
 
 Why is A2A (and other such protocols) important in your own words?
 
 ##### ✅ Answer:
+
+A2A is important because they let diffferent AI systmes communicate and collaborate directly, without manual or human mediation between each step.
+As AI gets more complex, one system can't be an expert at everything, so being able to let different AIs work together which each can have a specific expertise.
+For example - you might need to analyze specific data/metrics and then create a presentation based on the findings. You'd have one agent to do the data analysis. Without A2A, i'd manually create charts based on the results and then paste those into a deck. With A2A, after the data results are done, it would call the visualization agent that would create the charts for me, and then the presentation agent which would create the slides with the charts and findings.
+They could all use different models or be from different companies, but together they help with one larger action item.
 
 <br /><br />
 
