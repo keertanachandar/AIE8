@@ -168,8 +168,8 @@ Why is A2A (and other such protocols) important in your own words?
 
 ##### ✅ Answer:
 
-A2A is important because they let diffferent AI systmes communicate and collaborate directly, without manual or human mediation between each step.
-As AI gets more complex, one system can't be an expert at everything, so being able to let different AIs work together which each can have a specific expertise.
+A2A is important because it lets diffferent AI systems communicate and collaborate directly, without manual or human mediation between each step.
+As AI gets more complex, one system can't be an expert at everything - being able to let different AIs work together, which each can have a specific expertise, creates more powerful and all emcompassing tools.
 For example - you might need to analyze specific data/metrics and then create a presentation based on the findings. You'd have one agent to do the data analysis. Without A2A, i'd manually create charts based on the results and then paste those into a deck. With A2A, after the data results are done, it would call the visualization agent that would create the charts for me, and then the presentation agent which would create the slides with the charts and findings.
 They could all use different models or be from different companies, but together they help with one larger action item.
 
